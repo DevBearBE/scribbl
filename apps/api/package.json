@@ -1,0 +1,11 @@
+{
+  "name": "@scribbl/api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@scribbl/db": "workspace:*",
+    "@scribbl/types": "workspace:*",
+    "@scribbl/utils": "workspace:*"
+  }
+}

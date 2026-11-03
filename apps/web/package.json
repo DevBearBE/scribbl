@@ -1,0 +1,11 @@
+{
+  "name": "@scribbl/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@scribbl/types": "workspace:*",
+    "@scribbl/ui": "workspace:*",
+    "@scribbl/utils": "workspace:*"
+  }
+}
