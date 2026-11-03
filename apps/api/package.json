@@ -3,9 +3,20 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "dev": "nitro dev",
+    "build": "nitro build",
+    "preview": "nitro preview"
+  },
   "dependencies": {
     "@scribbl/db": "workspace:*",
     "@scribbl/types": "workspace:*",
-    "@scribbl/utils": "workspace:*"
+    "@scribbl/utils": "workspace:*",
+    "nitro": "^3.0.261102-rc"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "rolldown": "^1",
+    "typescript": "catalog:"
   }
 }

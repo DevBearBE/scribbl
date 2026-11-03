@@ -1,3 +1,12 @@
 packages:
   - apps/*
   - packages/*
+catalog:
+  "@types/node": 26.x
+  "@types/react": 19.x
+  "@types/react-dom": 19.x
+  react: 19.x
+  react-dom: 19.x
+  typescript: ~7.0.2
+minimumReleaseAgeExclude:
+  - nitro@3.0.261102-rc

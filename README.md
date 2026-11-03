@@ -6,7 +6,7 @@ pnpm monorepo.
 
 ```
 apps/
-  web/        web app (React)
+  web/        web app (React & Typescript)
   api/        API (Nitro)
 packages/
   ui/         shared UI components
