@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build && tsc -b",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -13,6 +13,8 @@
     "@scribbl/ui": "workspace:*",
     "@scribbl/utils": "workspace:*",
     "@tailwindcss/vite": "^4.3.3",
+    "@tanstack/react-query": "^5.105.3",
+    "@tanstack/react-router": "^1.170.46",
     "clsx": "^2.1.1",
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^8.1.0",
     "@rolldown/plugin-babel": "^0.3.0",
+    "@tanstack/router-plugin": "^1.168.48",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
