@@ -3,6 +3,6 @@ import type { ReactNode } from "react";
 
 const queryClient = new QueryClient();
 
-export const Providers = ({ children }: { children: ReactNode }) => (
+export const Providers = ({ children }: Readonly<{ children: ReactNode }>) => (
   <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 );
