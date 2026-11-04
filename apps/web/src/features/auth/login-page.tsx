@@ -1,1 +1,5 @@
-export const LoginPage = () => <h1>Login</h1>;
+export const LoginPage = () => (
+  <main>
+    <h1>Login</h1>
+  </main>
+);
