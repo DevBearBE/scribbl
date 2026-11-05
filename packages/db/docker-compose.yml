@@ -1,0 +1,16 @@
+name: scribbl
+
+services:
+  db:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_USER: scribbl
+      POSTGRES_PASSWORD: scribbl
+      POSTGRES_DB: scribbl
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
