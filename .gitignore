@@ -8,3 +8,5 @@ node_modules
 
 # AI
 .claude
+
+!packages/db/src/migrations/**/*.sql

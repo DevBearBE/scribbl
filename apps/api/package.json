@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "nitro dev",
     "build": "nitro build",
-    "preview": "nitro preview"
+    "preview": "nitro preview",
+    "seed:user": "node --env-file=.env.local scripts/seed-user.ts"
   },
   "dependencies": {
+    "@better-auth/drizzle-adapter": "catalog:",
     "@scribbl/db": "workspace:*",
     "@scribbl/types": "workspace:*",
     "@scribbl/utils": "workspace:*",
+    "better-auth": "catalog:",
     "nitro": "^3.0.261102-rc"
   },
   "devDependencies": {
