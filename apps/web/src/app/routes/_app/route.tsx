@@ -3,10 +3,9 @@ import { BaseTemplate } from "@/components/base-template";
 import { authClient } from "@/lib/auth/client";
 
 export const Route = createFileRoute("/_app")({
-  beforeLoad: async ({ location }) => {
+  beforeLoad: async () => {
     const { data } = await authClient.getSession();
-    if (!data)
-      throw redirect({ to: "/login", search: { redirect: location.href } });
+    if (!data) throw redirect({ to: "/login" });
   },
   component: () => (
     <BaseTemplate>

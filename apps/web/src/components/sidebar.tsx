@@ -6,7 +6,7 @@ export const Sidebar = () => {
 
   const onLogout = async () => {
     await authClient.signOut();
-    await navigate({ to: "/login", search: { redirect: undefined } });
+    await navigate({ to: "/login" });
   };
 
   return (
