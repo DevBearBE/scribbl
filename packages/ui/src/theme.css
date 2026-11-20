@@ -1,0 +1,65 @@
+@theme {
+  --font-sans: "Noto Sans Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Tapestry - Pink */
+  --color-tapestry-50: hsl(326 47% 97%);
+  --color-tapestry-100: hsl(328 48% 95%);
+  --color-tapestry-200: hsl(328 54% 90%);
+  --color-tapestry-300: hsl(329 55% 82%);
+  --color-tapestry-400: hsl(331 54% 70%);
+  --color-tapestry-500: hsl(332 50% 60%);
+  --color-tapestry-600: hsl(336 45% 55%);
+  --color-tapestry-700: hsl(338 49% 42%);
+  --color-tapestry-800: hsl(338 47% 35%);
+  --color-tapestry-900: hsl(339 43% 30%);
+  --color-tapestry-950: hsl(339 52% 17%);
+
+  /* Malibu - Blue */
+  --color-malibu-50: hsl(206 88% 97%);
+  --color-malibu-100: hsl(207 89% 93%);
+  --color-malibu-200: hsl(206 88% 87%);
+  --color-malibu-300: hsl(204 89% 78%);
+  --color-malibu-400: hsl(206 86% 72%);
+  --color-malibu-500: hsl(210 83% 60%);
+  --color-malibu-600: hsl(214 76% 53%);
+  --color-malibu-700: hsl(217 70% 48%);
+  --color-malibu-800: hsl(219 65% 40%);
+  --color-malibu-900: hsl(217 58% 33%);
+  --color-malibu-950: hsl(219 51% 21%);
+
+  --color-neutral-50: hsl(215 20% 97%);
+  --color-neutral-100: hsl(215 18% 93%);
+  --color-neutral-200: hsl(215 16% 87%);
+  --color-neutral-300: hsl(215 14% 78%);
+  --color-neutral-400: hsl(215 12% 68%);
+  --color-neutral-500: hsl(215 12% 58%);
+  --color-neutral-600: hsl(215 14% 48%);
+  --color-neutral-700: hsl(215 16% 40%);
+  --color-neutral-800: hsl(215 18% 32%);
+  --color-neutral-900: hsl(215 20% 25%);
+  --color-neutral-950: hsl(215 24% 15%);
+
+  --color-warning-50: hsl(38 95% 97%);
+  --color-warning-100: hsl(38 92% 93%);
+  --color-warning-200: hsl(38 90% 87%);
+  --color-warning-300: hsl(38 92% 78%);
+  --color-warning-400: hsl(38 94% 68%);
+  --color-warning-500: hsl(38 93% 58%);
+  --color-warning-600: hsl(38 88% 48%);
+  --color-warning-700: hsl(38 82% 40%);
+  --color-warning-800: hsl(38 72% 32%);
+  --color-warning-900: hsl(38 62% 25%);
+  --color-warning-950: hsl(38 70% 15%);
+
+  --color-danger-50: hsl(6 85% 97%);
+  --color-danger-100: hsl(6 88% 93%);
+  --color-danger-200: hsl(6 90% 87%);
+  --color-danger-300: hsl(6 88% 78%);
+  --color-danger-400: hsl(6 84% 68%);
+  --color-danger-500: hsl(6 78% 58%);
+  --color-danger-600: hsl(6 74% 48%);
+  --color-danger-700: hsl(6 70% 40%);
+  --color-danger-800: hsl(6 62% 32%);
+  --color-danger-900: hsl(6 52% 25%);
+  --color-danger-950: hsl(6 60% 15%);
+}

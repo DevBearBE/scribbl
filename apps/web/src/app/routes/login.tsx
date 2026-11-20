@@ -3,17 +3,9 @@ import { LoginPage } from "@/features/auth/login-page";
 import { authClient } from "@/lib/auth/client";
 
 export const Route = createFileRoute("/login")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    redirect:
-      typeof search.redirect === "string" &&
-      search.redirect.startsWith("/") &&
-      !search.redirect.startsWith("//")
-        ? search.redirect
-        : undefined,
-  }),
-  beforeLoad: async ({ search }) => {
+  beforeLoad: async () => {
     const { data } = await authClient.getSession();
-    if (data) throw redirect({ href: search.redirect ?? "/" });
+    if (data) throw redirect({ href: "/" });
   },
   head: () => ({ meta: [{ title: "Scribbl | Login" }] }),
   component: LoginPage,

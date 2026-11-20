@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/noto-sans": "^5.3.0",
     "@scribbl/types": "workspace:*",
     "@scribbl/ui": "workspace:*",
     "@scribbl/utils": "workspace:*",

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Sidebar } from "./sidebar.tsx";
+import { Sidebar } from "./sidebar";
 
 export const BaseTemplate = ({
   children,

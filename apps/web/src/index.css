@@ -1,1 +1,17 @@
 @import "tailwindcss";
+@import "@scribbl/ui/theme.css";
+@source "../../../packages/ui/src";
+
+@layer base {
+  body {
+    color: var(--color-neutral-950);
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-neutral-950);
+  }
+}

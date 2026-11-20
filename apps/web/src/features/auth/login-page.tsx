@@ -1,24 +1,30 @@
-import { useNavigate, useSearch } from "@tanstack/react-router";
-import { type FormEvent, useState } from "react";
+import {
+  Button,
+  Form,
+  Heading,
+  Input,
+  LogoMark,
+  PasswordInput,
+} from "@scribbl/ui";
+import { useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
 import { authClient } from "@/lib/auth/client";
+
+type LoginFormPayload = {
+  email: string;
+  password: string;
+};
 
 export const LoginPage = () => {
   const navigate = useNavigate();
-  const { redirect } = useSearch({ from: "/login" });
   const [message, setMessage] = useState<string | null>(null);
   const [pending, setPending] = useState<boolean>(false);
 
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
+  const onSubmit = async ({ email, password }: LoginFormPayload) => {
     setMessage(null);
     setPending(true);
 
-    const formData = new FormData(event.currentTarget);
-    const { error } = await authClient.signIn.email({
-      email: String(formData.get("email")),
-      password: String(formData.get("password")),
-    });
+    const { error } = await authClient.signIn.email({ email, password });
 
     setPending(false);
 
@@ -28,34 +34,58 @@ export const LoginPage = () => {
       return;
     }
 
-    await navigate({ href: redirect ?? "/" });
+    await navigate({ to: "/" });
   };
 
   return (
-    <main>
-      <h1>Login</h1>
-      <form onSubmit={onSubmit}>
-        <label>
-          Email
-          <input type="email" name="email" autoComplete="username" required />
-        </label>
+    <main className="flex min-h-screen items-center justify-center bg-neutral-50 px-4">
+      <section className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm">
+        <div className="mb-8 flex flex-col items-center gap-3">
+          <LogoMark />
+          <Heading>Login</Heading>
+          <p className="text-sm text-neutral-500">
+            Sign in to access your notes
+          </p>
+        </div>
 
-        <label>
-          Password
-          <input
-            type="password"
+        <Form<LoginFormPayload>
+          onFormSubmit={onSubmit}
+          className="flex flex-col gap-5"
+        >
+          <Input
+            type="email"
+            name="email"
+            label="Email"
+            leadingIcon="mail"
+            autoComplete="username"
+            required
+          />
+
+          <PasswordInput
             name="password"
+            label="Password"
             autoComplete="current-password"
             required
           />
-        </label>
 
-        {message && <p role="alert">{message}</p>}
+          {message && (
+            <p
+              role="alert"
+              className="rounded-lg border border-danger-200 bg-danger-50 px-3 py-2 text-sm text-danger-700"
+            >
+              {message}
+            </p>
+          )}
 
-        <button type="submit" disabled={pending}>
-          Login
-        </button>
-      </form>
+          <Button
+            type="submit"
+            disabled={pending}
+            className="w-full disabled:opacity-60"
+          >
+            Login
+          </Button>
+        </Form>
+      </section>
     </main>
   );
 };
