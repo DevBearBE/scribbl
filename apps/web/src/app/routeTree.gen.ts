@@ -12,6 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as AppRouteRouteImport } from './routes/_app/route'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as AppIndexRouteImport } from './routes/_app/index'
+import { Route as AppFavouritesIndexRouteImport } from './routes/_app/favourites/index'
+import { Route as AppNotesIndexRouteImport } from './routes/_app/notes/index'
+import { Route as AppTrashIndexRouteImport } from './routes/_app/trash/index'
 
 const AppRouteRoute = AppRouteRouteImport.update({
   id: '/_app',
@@ -27,27 +30,58 @@ const AppIndexRoute = AppIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AppRouteRoute,
 } as any)
+const AppFavouritesIndexRoute = AppFavouritesIndexRouteImport.update({
+  id: '/favourites/',
+  path: '/favourites/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppNotesIndexRoute = AppNotesIndexRouteImport.update({
+  id: '/notes/',
+  path: '/notes/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppTrashIndexRoute = AppTrashIndexRouteImport.update({
+  id: '/trash/',
+  path: '/trash/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof AppIndexRoute
   '/login': typeof LoginRoute
+  '/favourites/': typeof AppFavouritesIndexRoute
+  '/notes/': typeof AppNotesIndexRoute
+  '/trash/': typeof AppTrashIndexRoute
 }
 export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/': typeof AppIndexRoute
+  '/favourites': typeof AppFavouritesIndexRoute
+  '/notes': typeof AppNotesIndexRoute
+  '/trash': typeof AppTrashIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app': typeof AppRouteRouteWithChildren
   '/login': typeof LoginRoute
   '/_app/': typeof AppIndexRoute
+  '/_app/favourites/': typeof AppFavouritesIndexRoute
+  '/_app/notes/': typeof AppNotesIndexRoute
+  '/_app/trash/': typeof AppTrashIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login'
+  fullPaths: '/' | '/login' | '/favourites/' | '/notes/' | '/trash/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/login' | '/'
-  id: '__root__' | '/_app' | '/login' | '/_app/'
+  to: '/login' | '/' | '/favourites' | '/notes' | '/trash'
+  id:
+    | '__root__'
+    | '/_app'
+    | '/login'
+    | '/_app/'
+    | '/_app/favourites/'
+    | '/_app/notes/'
+    | '/_app/trash/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -78,15 +112,42 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppIndexRouteImport
       parentRoute: typeof AppRouteRoute
     }
+    '/_app/favourites/': {
+      id: '/_app/favourites/'
+      path: '/favourites'
+      fullPath: '/favourites/'
+      preLoaderRoute: typeof AppFavouritesIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/notes/': {
+      id: '/_app/notes/'
+      path: '/notes'
+      fullPath: '/notes/'
+      preLoaderRoute: typeof AppNotesIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/trash/': {
+      id: '/_app/trash/'
+      path: '/trash'
+      fullPath: '/trash/'
+      preLoaderRoute: typeof AppTrashIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
   }
 }
 
 interface AppRouteRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
+  AppFavouritesIndexRoute: typeof AppFavouritesIndexRoute
+  AppNotesIndexRoute: typeof AppNotesIndexRoute
+  AppTrashIndexRoute: typeof AppTrashIndexRoute
 }
 
 const AppRouteRouteChildren: AppRouteRouteChildren = {
   AppIndexRoute: AppIndexRoute,
+  AppFavouritesIndexRoute: AppFavouritesIndexRoute,
+  AppNotesIndexRoute: AppNotesIndexRoute,
+  AppTrashIndexRoute: AppTrashIndexRoute,
 }
 
 const AppRouteRouteWithChildren = AppRouteRoute._addFileChildren(
